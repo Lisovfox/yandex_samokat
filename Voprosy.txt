@@ -9,6 +9,14 @@ INNER JOIN "Orders" AS o ON o."courierId" = c.id
 WHERE o."inDelivery" = true
 GROUP BY c.login;
 
+# можно чуть исправить запрос, переименовав второй столбец
+
+SELECT c.login, COUNT(*) AS "quantity orders"
+FROM "Couriers" AS c
+INNER JOIN "Orders" AS o ON o."courierId" = c.id
+WHERE o."inDelivery" = true
+GROUP BY c.login;
+
 
 # Задание 2
 
